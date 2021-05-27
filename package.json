@@ -1,15 +1,24 @@
 {
   "name": "discord-bot-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "discord-bot-template is a comprehensively-commented Discord bot template that includes a command handler to help manage commands.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "William Faircloth",
+  "license": "MIT",
   "dependencies": {
     "discord.js": "^12.5.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willuhm-js/discord-bot-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/willuhm-js/discord-bot-template/issues"
+  },
+  "homepage": "https://github.com/willuhm-js/discord-bot-template#readme"
 }
