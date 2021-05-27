@@ -45,7 +45,7 @@ client.on("message", message => {
   const args = message.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
 
-  // Don't respond is command doesn't exist
+  // Don't respond if command doesn't exist
   if (!client.commands.has(command)) return;
 
   try {
