@@ -17,7 +17,7 @@ let prefix = "!";
 client.prefix = prefix;
 
 // Simplify path retrival
-const getPath = fPath => path.join(__dirname, fPath);
+const getPath = (fPath1, fPath2 = "") => path.join(__dirname, fPath1, fPath2);
 
 // Notify console and set activity on startup
 client.on("ready", () => {
@@ -32,7 +32,7 @@ const commandFiles = fs.readdirSync(getPath("commands")) // Look for files in th
 
 for (const file of commandFiles) {
   // Require the command file
-  const command = require(getPath(`commands/${file}`));
+  const command = require(getPath("commands", file));
 
   // Register command with the collection
   client.commands.set(command.name, command)
