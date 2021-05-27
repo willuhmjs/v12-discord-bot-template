@@ -35,7 +35,7 @@ for (const file of commandFiles) {
   const command = require(getPath("commands", file));
 
   // Register command with the collection
-  client.commands.set(command.name, command)
+  client.commands.set(command.name, command);
 };
 
 client.on("message", message => {
