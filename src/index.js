@@ -16,6 +16,9 @@ const path = require("path");
 let prefix = "!";
 client.prefix = prefix;
 
+// Simplify path retrival
+const getPath = fPath => path.join(__dirname, fPath);
+
 // Notify console and set activity on startup
 client.on("ready", () => {
   console.log("Bot Started");
@@ -24,12 +27,12 @@ client.on("ready", () => {
 
 // Search and require command files (command handler)
 client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync(path.join(__dirname, "commands")) // Look for files in the /commands directory
+const commandFiles = fs.readdirSync(getPath("commands")) // Look for files in the /commands directory
   .filter(file => file.endsWith(".js")); // Only use javascript files
 
 for (const file of commandFiles) {
   // Require the command file
-  const command = require(path.join(__dirname, `commands/${file}`));
+  const command = require(getPath(`commands/${file}`));
 
   // Register command with the collection
   client.commands.set(command.name, command)
